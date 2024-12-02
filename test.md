@@ -8,10 +8,8 @@ The **News Aggregator API** is a backend system built with Laravel that aggregat
 ### **Key Features**
 - Aggregates news from **News API (newsapi.org)**, **The Guardian**, and **The New York Times**.
 - Allows filtering by author, category, and source.
-- Supports full-text search in article titles and content.
 - Uses queues for asynchronous fetching and processing of news.
 - Includes live updates using **Laravel Scheduler** and **Pusher**.
-- Handles rate limits of API keys for developer accounts.
 
 ---
 
@@ -38,12 +36,12 @@ GET /api/articles
 
 | Parameter    | Type    | Required | Description                                                                     | Example                       |
 |--------------|---------|----------|---------------------------------------------------------------------------------|-------------------------------|
-| `search`     | String  | No       | Search for articles by title or content (case-insensitive).                     | `search=breaking news`        |
+| `search`     | String  | No       | Search for articles by title or description.                     | `search=breaking news`        |
 | `author`     | String  | No       | Filter articles by author name.                                                 | `author=John Doe`             |
 | `category`   | String  | No       | Filter articles by category.                                                    | `category=Technology`         |
 | `source`     | String  | No       | Filter articles by source.                                                      | `source=NYTimes`              |
-| `page`       | Integer | No       | Specify the page number for paginated results. Defaults to 1.                   | `page=2`                      |
-| `per_page`   | Integer | No       | Number of articles per page. Defaults to 10.                                    | `per_page=5`                  |
+| `start`       | Integer | No       | Specify the page number for paginated results. Defaults to 1.                   | `start=2`                      |
+| `length`   | Integer | No       | Number of articles per page. Defaults to 10.                                    | `length=5`                  |
 
 ---
 
